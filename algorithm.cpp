@@ -10,8 +10,7 @@ int value=0,shortest_path=0;
 
 vector <int> current_path;
 vector <int> next_path;;
-using namespace std;
- 
+
 uniform_real_distribution<float> random_float_0_1(0.0, 1.0);
 mt19937 engine (time(NULL)); // Mersenne twister MT19937 silnik
 
@@ -676,13 +675,13 @@ void Annealing() {
  
 ////////TABU SEARCH
  
-void tabuMove(int city1, int city2, vector<vector<int>> tabuList){ //tabus the swap operation
+void tabuMove(int city1, int city2, vector<vector<int> > tabuList){ //tabus the swap operation
         tabuList[city1][city2]+= 5;
         tabuList[city2][city1]+= 5;
        
     }
    
-void decrementTabu(vector<vector<int>> tabuList){
+void decrementTabu(vector<vector<int> > tabuList){
         for(int i = 0; i<(int)tabuList.size(); i++){
            for(int j = 0; j<(int)tabuList.size(); j++){
             tabuList[i][j]-=tabuList[i][j]<=0?0:1;
@@ -698,7 +697,7 @@ vector <int> swapOperator(int city1, int city2, vector <int> solution) {
         return solution;
 }
  
-std::vector<int> getBestNeighbour(vector<vector<int>> tabuList, vector <int> initSolution) {
+std::vector<int> getBestNeighbour(vector<vector<int> > tabuList, vector <int> initSolution) {
  
  
         vector <int> bestSol((int)initSolution.size());
@@ -744,7 +743,7 @@ void TabuSearch(){
         int number_of_iterations = 100;
         int TabuLength = n;
         get_first_path();
-        vector<vector<int>> tabuList(TabuLength, std::vector<int>(TabuLength));
+        vector<vector<int> > tabuList(TabuLength, std::vector<int>(TabuLength));
         vector <int> bestSol((int)current_path.size());
         bestSol = current_path;
     int shortest_path = GetTotalDistance(current_path);

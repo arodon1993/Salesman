@@ -42,4 +42,14 @@ double CycleLength(int *ants); // zwraca dlugosc podanej sciezki
 
 int *ShortestPath(int **ants); // szuka najlepszej ściezki wśród mrówek
 
+double GetTotalDistance(list<int> order);
+list<int> GetNextArrangement(list<int> order);
+void get_first_path();
+void Annealing();
+void TabuSearch();
+void tabuMove(int c1, int c2, vector<vector <int> > tabuList);
+void decrementTabu(vector<vector <int> > tabuList);
+std::vector<int> getBestNeighbour(vector<vector <int> > tabuList, vector <int> initSolution);
+vector <int> swapOperator(int city1, int city2, vector <int> solution);
+
 #endif

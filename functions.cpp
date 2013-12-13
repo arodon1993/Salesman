@@ -13,6 +13,8 @@ void problem_menu()
 	cout<<"3. Ant colony\n";
 	cout<<"4. 2-opt\n";
 	cout<<"5. 3-opt\n";
+	cout<<"6. Annealing\n";
+	cout<<"7. Tabusearch\n";
 	cout<<"0. Wstecz\n";
 	cout<<"\nWybor: ";
 
@@ -37,6 +39,14 @@ void problem_menu()
 		break;
 	case 5:
 		opt3();
+		break;
+
+	case 6:
+		Annealing();
+		break;
+
+	case 7:
+		TabuSearch();
 		break;
 
 	case 0:
